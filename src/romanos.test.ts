@@ -77,14 +77,14 @@ describe('romanos', () => {
         //expectation
         expect (numeroRomanos).toEqual("III");
     });
-    // it('deveria converter 4 para "IV"', () => {
-    //     //setup
-    //     const sut = new Romanos();
-    //     //action
-    //     const numeroRomanos = sut.converte(4); 
-    //     //expectation
-    //     expect (numeroRomanos).toEqual("IV");
-    // });
+    it('deveria converter 4 para "IV"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(4); 
+        //expectation
+        expect (numeroRomanos).toEqual("IV");
+    });
 
     it('deveria converter 6 para "VI"', () => {
         //setup
