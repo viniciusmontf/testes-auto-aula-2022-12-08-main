@@ -104,4 +104,23 @@ describe('romanos', () => {
             () => { sut.converte(-99) } 
         ).toThrow('');
     });
+
+    it('deveria converter 1001 para "MI"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(1001); 
+        //expectation
+        expect (numeroRomanos).toEqual("MI");
+    });
+
+    it('deveria converter 1009 para "MIX"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(1009); 
+        //expectation
+        expect (numeroRomanos).toEqual("MIX");
+    });
+
 })
