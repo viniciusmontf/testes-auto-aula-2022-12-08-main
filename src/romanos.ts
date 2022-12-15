@@ -6,23 +6,21 @@ class Romanos {
 
     converte(arabico: number):string{
         
-        const posicao_encontrada = this.arabicos.indexOf(arabico);
-        if(posicao_encontrada >= 0){
-            return this.romanos[posicao_encontrada];
-        } else {
-            const posicao_encontrada2 = this.arabicos.indexOf(arabico-1);
-            if (posicao_encontrada2 >= 0) {
-                // ok
-                return this.romanos[posicao_encontrada2]+"I";
-            } else {
-                const posicao_encontrada3 = this.arabicos.indexOf(arabico-2);
-                if (posicao_encontrada3 >= 0) {
-                    // ok
-                    return this.romanos[posicao_encontrada3]+"II";
+        var romanized = '';
+
+        if(arabico > 0) {
+            for (var index = 0; index < this.arabicos.length; index++) {
+                while (this.arabicos[index] <= arabico) {
+                  romanized += this.romanos[index];
+                  arabico -= this.arabicos[index];
                 }
             }
+            return romanized;
+        } else {
+            throw new Error("arabico desconhecido");
         }
-        throw new Error("arabico desconhecido");
+
+
     } 
 }
 
