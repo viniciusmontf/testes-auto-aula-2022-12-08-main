@@ -123,4 +123,46 @@ describe('romanos', () => {
         expect (numeroRomanos).toEqual("MIX");
     });
 
+    it('deveria converter 83 para "LXXXIII"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(83); 
+        //expectation
+        expect (numeroRomanos).toEqual("LXXXIII");
+    });
+
+    it('deveria converter 798 para "DCCXCVIII"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(798); 
+        //expectation
+        expect (numeroRomanos).toEqual("DCCXCVIII");
+    });
+    it('deveria converter 891 para "DCCCXCI"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(891); 
+        //expectation
+        expect (numeroRomanos).toEqual("DCCCXCI");
+    });
+    it('deveria converter 2014 para "MMXIV"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(2014); 
+        //expectation
+        expect (numeroRomanos).toEqual("MMXIV");
+    });
+    it('deveria converter 3999 para "MIX"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(3999); 
+        //expectation
+        expect (numeroRomanos).toEqual("MMMCMXCIX");
+    });
+
 })
